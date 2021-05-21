@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rust Detection</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+    	#hero{
+    		height:100vh;
+        padding-top: 75px;
+        font-family: 'Open Sans', sans-serif;
+       background: url({{ url_for('static', filename='img/car.gif') }}) no-repeat;
+       background-size:cover;
+      min-height: 600px;
+       position: relative;
+       background-position:left;
+       background-opacity:0.4;
+    }
+    #header{
+    background-color: black;
+    width: 100%;
+    height:80px;
+    padding-left: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+	}
+	#header > a{
+	margin-top: -80px;
+	margin-left: 90%;
+	}
+    </style>
+</head>
+<body>
+	<div class="container-fluid" id="header">
+    <img src="/static/img/codebugged.jpg" width="140px" height="140px" style="position: absolute; margin-top: 55px; z-index: 10000">
+    <div style="display: flex; align-items: flex-end; width: 100%; justify-content: flex-end;">
+    <a role="button" class="btn btn-success" href="/"><strong>Go Back</strong>
+    </a>
+	</div>
+</div>
+<h2 style="font-size: 30px;color:green ; text-align: center;"><strong> Your Result</strong></h2>
+<div class="container-fluid" id="hero" >
+<div  style="margin-left: 3rem; margin-right: 3rem;">
+<div class="row" style="background: rgba(0, 0, 0, 0.5);">>
+  
+    <div class="column" style="text-align: center color:white">
+    <img src=" {{url_for('send_image', filename=image1)}}" width="250" height="200" style="margin: 20px 25px 5px 5px;">
+      <br><h5 style="color:white">Found Rust = {{res1}}px</h5>
+  </div>
+  <div class="column">
+  <img src=" {{url_for('send_image', filename=image2)}}" width="250" height="200" style="margin: 20px 25px 5px 5px;">
+      <br> <h5 style="color:white">Found Rust = {{res2}}px</h5>
+  </div>
+  <div class="column">
+   <img src=" {{url_for('send_image', filename=image3)}}" width="250" height="200" style="margin: 20px 25px 5px 5px;">
+       <br><h5 style="color:white">Found Rust = {{res3}}px</h5>
+  </div>
+   <div class="column">
+    <img src=" {{url_for('send_image', filename=image4)}}" width="250" height="200" style="margin: 20px 25px 5px 5px;">
+       <br> <h5 style="color:white">Found Rust = {{res4}}px</h5>
+  </div>
+   <div class="column">
+   <img src=" {{url_for('send_image', filename=image5)}}" width="250" height="200" style="margin: 20px 25px 5px 5px;">
+       <br> <h5 style="color:white">Found Rust = {{res5}}px</h5>
+  </div>
+</div>
+<br>
+
+
+<br>
+<a role="button" class="btn btn-success" href="/" style="align-items: center;">Test More Cars</a>
+		</div>
+	</div>
+</body>
+</html>
